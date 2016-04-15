@@ -50,6 +50,7 @@ public class PrincipalActivity extends Activity {
         listaOcorrencias.add(new Ocorrencia("Perturbação do Sossego",291));
         listaOcorrencias.add(new Ocorrencia("Invasão",273));
         listaOcorrencias.add(new Ocorrencia("Atitude Suspeita",266));
+        listaOcorrencias.add(new Ocorrencia("Furto",170));
 
         return listaOcorrencias;
     }
