@@ -18,6 +18,7 @@ public class PrincipalActivity extends Activity {
     private RecyclerView.Adapter listaOcorrenciasAdapter;
     private RecyclerView.LayoutManager layoutManager;
     private List<Ocorrencia> listaOcorrencias;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +27,7 @@ public class PrincipalActivity extends Activity {
         setUI();
     }
 
-    private void setUI(){
+    private void setUI() {
         listaOcorrenciasView = (RecyclerView) findViewById(R.id.rc_lista_ocorrencias);
         listaOcorrenciasView.setHasFixedSize(true);
 
@@ -39,18 +40,18 @@ public class PrincipalActivity extends Activity {
         listaOcorrenciasView.setItemAnimator(new DefaultItemAnimator());
     }
 
-    private List<Ocorrencia> getListaOcorrencias(){
+    private List<Ocorrencia> getListaOcorrencias() {
         listaOcorrencias = new ArrayList<>();
-        listaOcorrencias.add(new Ocorrencia("Apoio",932));
-        listaOcorrencias.add(new Ocorrencia("Dano",752));
-        listaOcorrencias.add(new Ocorrencia("Roubo",637));
-        listaOcorrencias.add(new Ocorrencia("Abordagem",422));
-        listaOcorrencias.add(new Ocorrencia("Substância Ilícita",299));
-        listaOcorrencias.add(new Ocorrencia("Ameaça",291));
-        listaOcorrencias.add(new Ocorrencia("Perturbação do Sossego",291));
-        listaOcorrencias.add(new Ocorrencia("Invasão",273));
-        listaOcorrencias.add(new Ocorrencia("Atitude Suspeita",266));
-        listaOcorrencias.add(new Ocorrencia("Furto",170));
+        listaOcorrencias.add(new Ocorrencia("Apoio", 932));
+        listaOcorrencias.add(new Ocorrencia("Dano", 752));
+        listaOcorrencias.add(new Ocorrencia("Roubo", 637));
+        listaOcorrencias.add(new Ocorrencia("Abordagem", 422));
+        listaOcorrencias.add(new Ocorrencia("Substância Ilícita", 299));
+        listaOcorrencias.add(new Ocorrencia("Ameaça", 291));
+        listaOcorrencias.add(new Ocorrencia("Perturbação do Sossego", 291));
+        listaOcorrencias.add(new Ocorrencia("Invasão", 273));
+        listaOcorrencias.add(new Ocorrencia("Atitude Suspeita", 266));
+        listaOcorrencias.add(new Ocorrencia("Furto", 170));
 
         return listaOcorrencias;
     }

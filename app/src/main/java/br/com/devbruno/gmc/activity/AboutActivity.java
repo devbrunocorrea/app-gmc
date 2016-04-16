@@ -16,7 +16,7 @@ public class AboutActivity extends Activity {
         String acao;
         try {
             acao = getIntent().getExtras().get("acao").toString();
-        } catch (NullPointerException e){
+        } catch (NullPointerException e) {
             acao = "Google Study Jam";
         }
         Toast.makeText(this, acao, Toast.LENGTH_SHORT).show();

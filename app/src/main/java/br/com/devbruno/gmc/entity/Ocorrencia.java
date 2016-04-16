@@ -7,7 +7,7 @@ public class Ocorrencia implements Serializable {
     private String descricao;
     private int total;
 
-    public Ocorrencia(String descricao, int total){
+    public Ocorrencia(String descricao, int total) {
         this.descricao = descricao;
         this.total = total;
     }

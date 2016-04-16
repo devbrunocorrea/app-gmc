@@ -14,11 +14,11 @@ import br.com.devbruno.gmc.R;
 import br.com.devbruno.gmc.activity.AboutActivity;
 import br.com.devbruno.gmc.entity.Ocorrencia;
 
-public class ListaOcorrenciasAdapter extends RecyclerView.Adapter<ListaOcorrenciasAdapter.ViewHolder>{
+public class ListaOcorrenciasAdapter extends RecyclerView.Adapter<ListaOcorrenciasAdapter.ViewHolder> {
 
     private List<Ocorrencia> listaOcorrencias;
 
-    public ListaOcorrenciasAdapter (List<Ocorrencia> listaOcorrencias){
+    public ListaOcorrenciasAdapter(List<Ocorrencia> listaOcorrencias) {
         this.listaOcorrencias = listaOcorrencias;
     }
 
@@ -32,7 +32,7 @@ public class ListaOcorrenciasAdapter extends RecyclerView.Adapter<ListaOcorrenci
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.ocorrenciaDescricao.setText(this.listaOcorrencias.get(position).getDescricao());
         holder.ocorrenciaTotal.setText(this.listaOcorrencias.get(position).getTotalOcorrenciasFormatado());
-        holder.ocorrenciaPosition.setText(String.valueOf(position+1).concat("°"));
+        holder.ocorrenciaPosition.setText(String.valueOf(position + 1).concat("°"));
 
         final int positionOnClick = position;
         holder.listaOcorrenciaItem.setOnClickListener(new View.OnClickListener() {
@@ -43,14 +43,14 @@ public class ListaOcorrenciasAdapter extends RecyclerView.Adapter<ListaOcorrenci
         });
     }
 
-    public void onClickItem(View v, int position){
+    public void onClickItem(View v, int position) {
         Intent intent = new Intent(v.getContext(), AboutActivity.class);
         intent.putExtra("acao", listaOcorrencias.get(position).getDescricao());
         v.getContext().startActivity(intent);
     }
 
     @Override
-    public int getItemCount(){
+    public int getItemCount() {
         return this.listaOcorrencias.size();
     }
 
@@ -59,6 +59,7 @@ public class ListaOcorrenciasAdapter extends RecyclerView.Adapter<ListaOcorrenci
         public TextView ocorrenciaTotal;
         public TextView ocorrenciaPosition;
         public CardView listaOcorrenciaItem;
+
         public ViewHolder(View view) {
             super(view);
             ocorrenciaDescricao = (TextView) view.findViewById(R.id.ocorrencia_descricao_text_view);
