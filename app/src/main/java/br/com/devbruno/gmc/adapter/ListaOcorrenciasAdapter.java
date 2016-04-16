@@ -25,22 +25,28 @@ public class ListaOcorrenciasAdapter extends RecyclerView.Adapter<ListaOcorrenci
     @Override
     public ListaOcorrenciasAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.lista_ocorrencias_item, parent, false);
-        ViewHolder vh = new ViewHolder(v);
-        return vh;
+        return new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.ocorrenciaDescricao.setText(this.listaOcorrencias.get(position).getDescricao());
         holder.ocorrenciaTotal.setText(this.listaOcorrencias.get(position).getTotalOcorrenciasFormatado());
-        holder.ocorrenciaPosition.setText((position+1) + "°");
+        holder.ocorrenciaPosition.setText(String.valueOf(position+1).concat("°"));
+
+        final int positionOnClick = position;
         holder.listaOcorrenciaItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), AboutActivity.class);
-                v.getContext().startActivity(intent);
+                onClickItem(v, positionOnClick);
             }
         });
+    }
+
+    public void onClickItem(View v, int position){
+        Intent intent = new Intent(v.getContext(), AboutActivity.class);
+        intent.putExtra("acao", listaOcorrencias.get(position).getDescricao());
+        v.getContext().startActivity(intent);
     }
 
     @Override
